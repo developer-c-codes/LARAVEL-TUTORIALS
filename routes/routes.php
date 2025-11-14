@@ -44,5 +44,5 @@ Route::post('/contact', [ContactController::class, 'submitForm'])->name ('contac
 
                 //MIDDLEWARE IN ROUTES
 Route::get('/dashboard', function () {
-    return view ('dashboars');  
+    return view ('dashboars');
 })->middlware('auth');          //only logged-in users can access this route
