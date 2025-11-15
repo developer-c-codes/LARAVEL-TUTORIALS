@@ -33,7 +33,6 @@ RUN chown -R www-data:www-data /var/www/html/storage \
 RUN composer install --no-dev --optimize-autoloader
 
 
-RUN php artisan key:generate
 RUN php artisan config:cache
 RUN php artisan route:cache
 
