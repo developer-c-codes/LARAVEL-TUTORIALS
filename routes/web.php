@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+Route::get('/', function () {
+    return redirect('/products');
+});
+
+
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');  // call the index methos in productcontroller to show products in views
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');  // call the store method in preductcontroller to store product in database
@@ -10,3 +15,4 @@ Route::get('products/{id}/edit', [ProductController::class, 'edit'])->name('prod
 Route::put('products/{id}', [ProductController::class, 'update'])->name('products.update');  // u[date product with specific id :: put method used to submit the edited form
 
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+
